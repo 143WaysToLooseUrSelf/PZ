@@ -14,5 +14,5 @@ try:
     length = A % B
     print(f"[+] Длина незанятой части отрезка A: {length}")
 
-except ValueError as e:
+except ValueError as e:  # позволяет обрабатывать возможные ошибки
     print(f"[-] Ошибка: {e}")
