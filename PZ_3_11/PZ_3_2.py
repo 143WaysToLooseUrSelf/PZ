@@ -21,4 +21,4 @@ try:
         raise ValueError("[-] Ошибка: Введите число в диапазоне от 1 и 999")
 
 except ValueError as e:
-    print(e)
+    print(f"[-] Ошибка: {e}")
