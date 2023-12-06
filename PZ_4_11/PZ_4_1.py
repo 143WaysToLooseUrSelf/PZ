@@ -1,18 +1,21 @@
 # Дано целое число N (>0).
 # Найти произведение 1.1 • 1.2 • 1.3 •... (N сомножителей).
 
+def fun():
+    try:
+        N = int(input("Введите целое число N: " + "\n"))
 
-try:
-    N = int(input("Введите целое число N: " + "\n"))
+        if N <= 0:
+            raise ValueError("N должно быть больше 0")
+        result = 1.0
+        for i in range(1, N + 1):
+            result *= 1.0 + (i / 10)  # i / 10 = дробное значение
 
-    if N <= 0:
-        raise ValueError("N должно быть больше 0")
+        print("Произведение 1.1 * 1.2 * 1.3 * ... *" + "\n" f"{N} = {result:.2f}")
 
-    result = 1.0
-    for i in range(1, N + 1):
-        result *= 1.0 + (i / 10)  # i / 10 = дробное значение
+    except ValueError as e:
+        print(f"[-] Ошибка:", e)
+        fun()
 
-    print("Произведение 1.1 * 1.2 * 1.3 * ... *" + "\n" f"{N} = {result:.2f}")
 
-except ValueError as e:
-    print(f"[-] Ошибка:", str(e))
+fun()

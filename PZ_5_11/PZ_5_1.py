@@ -1,5 +1,6 @@
 import random
 
+
 def chars():
     char = ''
     for i in range(40):
