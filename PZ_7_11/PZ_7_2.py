@@ -2,13 +2,18 @@
 # первого каталога (без символов «\»). Если файл содержится в корневом каталоге, то
 # вывести символ «\».
 
-import os
+def dirx(file_path):
+    try:
+        parts = file_path.split("\\")
+        if len(parts) > 1:
+            return parts[0]
+        else:
+            return "\\"
 
-file_path = 'C:\\Users\\tax\\Desktop\\hashbreaker'
-directory = os.path.dirname(file_path).split(os.path.sep)[1]
+    except ValueError:
+        return "Ошибка при обработке пути"
 
-if directory:
 
-    print(directory)
-else:
-    print('\\')
+file_name = "C:\\Users\\Baxdew\\Documents\\pz7_11.txt"
+directory = dirx(file_name)
+print(directory)

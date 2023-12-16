@@ -2,9 +2,11 @@
 # которыми вставлено по одному пробелу.
 
 
-line = input('Введите что-то: ' + '\n')
-spaced = " ".join(line)
+def spaces(s):
+    result = ' '.join(s) # для объединения символов строки s с пробелом между каждым символом.
+    return result
 
-print(f'Ваш результат: {spaced}')
 
-
+S = "privet"
+result = spaces(S)
+print(result)
