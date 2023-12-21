@@ -2,11 +2,17 @@
 # которыми вставлено по одному пробелу.
 
 
-def spaces(s):
-    result = ' '.join(s)  # для объединения символов строки s с пробелом между каждым символом.
-    return result
+def bom():
+    try:
+        user = input("Введите строку: ")
+        if ' ' in user:
+            raise ValueError("Ошибка: строка содержит пробелы")
+        else:
+            result = ' '.join(user)
+            print(result)
+    except ValueError as e:
+        print(e)
+        bom()
 
 
-S = "privet"
-result = spaces(S)
-print(result)
+bom()
