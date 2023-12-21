@@ -5,19 +5,22 @@
 # набора из трех чисел: (Ai, Bi, Ci) и (A2, B2, C2).
 
 
-def SortInc3():
-    A = float(input("Введите значение A: "))
-    B = float(input("Введите значение B: "))
-    C = float(input("Введите значение C: "))
+def SortInc3(A, B, C):
+    if A > B:
+        A, B = B, A
+    if B > C:
+        B, C = C, B
+    if A > B:
+        A, B = B, A
+    return A, B, C
 
-    sorted_values = sorted([A, B, C])
-    return sorted_values[0], sorted_values[1], sorted_values[2]
 
-
-A1, B1, C1 = SortInc3()
+# Запрос ввода трех чисел для первого набора
+A1, B1, C1 = map(float, input("Введите три числа через пробел для первого набора: ").split())
+A1, B1, C1 = SortInc3(A1, B1, C1)
 print("Упорядоченный набор (A1, B1, C1):", A1, B1, C1)
 
-A2, B2, C2 = SortInc3()
+# Запрос ввода трех чисел для второго набора
+A2, B2, C2 = map(float, input("Введите три числа через пробел для второго набора: ").split())
+A2, B2, C2 = SortInc3(A2, B2, C2)
 print("Упорядоченный набор (A2, B2, C2):", A2, B2, C2)
-
-SortInc3()

@@ -2,7 +2,7 @@
 
 from random import randint
 
-symbols_list = ['a', 'b', 'c', 'd', 'e', 'f', 'j', 'g', 'x']
+symbols_list = ['a', 'b', 'c', 'd', 'e', 'f', 'j', 'g', 'x', 'l', 's', 'z', 'w']
 
 
 def symb():
