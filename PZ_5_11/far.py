@@ -1,6 +1,8 @@
-def symb():
-    a = int(input("Введите первое число: "))
-    b = int(input("Введите второе число: "))
-    return a + b
+def sab(num1, num2):
+    return num1 + num2
 
-print(symb())
+
+num1 = int(input('1:'))
+num2 = int(input('2:'))
+
+print(sab(num1, num2))
