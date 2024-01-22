@@ -12,15 +12,15 @@ def SortInc3(A, B, C):
         B, C = C, B
     if A > B:
         A, B = B, A
-    return A, B, C
+    print(A, B, C)
 
 
 Ai, Bi, Ci = map(float, input("Введите три числа через пробел: ").split())  # разбивает строку на отдельные числа
-A2, B2, C2 = map(float, input("Введите еще три числа через пробел: ").split())  # map - преобразует числа из строкового
+A2, B2, C2 = map(float, input("Введите три числа через пробел: ").split())  # преобразует числа из строкового
 # формата во float
 
-Ai, Bi, Ci = SortInc3(Ai, Bi, Ci)
-A2, B2, C2 = SortInc3(A2, B2, C2)
+print("Значения первого набора:")
+SortInc3(Ai, Bi, Ci)
 
-print(Ai, Bi, Ci)
-print(A2, B2, C2)
+print("Значения второго набора:")
+SortInc3(A2, B2, C2)
