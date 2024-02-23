@@ -7,7 +7,7 @@ import random
 
 
 def array():
-    N = random.randrange(2, 21)  # 2 - 20
+    N = random.randint(2, 21)  # 2 - 20
     A = list(range(N))  # создает список a, заполняя его значениями в диапазоне от 0 до N-1.
 
     print("N = ", N)
