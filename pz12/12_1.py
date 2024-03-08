@@ -1,31 +1,20 @@
-# Организовать и вывести последовательность из N случайных целых чисел. Из
-# исходной последовательности организовать последовательность, содержащую
-# положительные числа и последовательность, содержащую отрицательные числа. Найти
-# количество элементов в полученных последовательностях.
+# 1.В последовательности на n целых чисел найти и вывести:
+# 1. максимальный среди положительных
+# 2. минимальный среди отрицательных
+# 3. произведение элементов
 
 import random
+from functools import reduce
 
-try:
-    N = int(input("Введите кол-во случайных чисел N: "))  # Запрашиваем у пользователя количество чисел
-    if N <= 0:
-        raise ValueError("Число N должно быть больше нуля")
+n = 10
 
-    random_x = [random.randint(-100, 100) for i in range(N)]
-    print(f"Последовательность из N случайных чисел:{random_x}")
+num = [random.randint(-10, 10) for i in range(n)]
+positive_max = max(filter(lambda x: x > 0, num))
+negative_max = min(filter(lambda x: x < 0, num))
 
-    positive = [num for num in random_x if num > 0]
-    negative = [num for num in random_x if num < 0]
+proizvedenie = reduce(lambda x, y: x * y, num)
 
-    count_positive = len(positive)
-    count_negative = len(negative)
-    all_count = len(random_x)
-
-    print(f"\nКол-во элементов:{all_count}")
-    print(f"\nПоложительные числа:{positive}")
-    print(f"Количество положительных чисел: {count_positive}")
-    print(f"\nОтрицательные числа:{negative}")
-    print(f"Количество отрицательных чисел: {count_negative}")
-
-except Exception as e:
-    print(f"Произошла ошибка: {e}")
-
+print(f"Последовательность чисел: {num}")
+print(f"Максимальное положительное число: {positive_max}")
+print(f"Минимальное отрицательное число: {negative_max}")
+print(f"Произведение элементов: {proizvedenie}")
