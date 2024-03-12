@@ -1,13 +1,17 @@
-# В матрице найти сумму и произведение элементов строки N (N задать с клавиатуры).
+import random
 from functools import reduce
 
-n = int(input("Введите номер строки: "))
+N = int(input("Введите размер матрицы: "))
+matrix = [[random.randint(-10, 10) for el in range(N)] for row in range(N)]
+print(f"Исходная матрица: {matrix}")
 
-matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+for row in matrix:
+    print(row)
 
-row = matrix[n]
-sum_row = sum(row)
-proizvedenie = reduce(lambda x, y: x * y, row)
+cols = [reduce(lambda x, y: x + y, [row[i] for row in matrix]) for i in range(N)]
+print(f"Сумма элементов каждого столбца: {cols}")
 
-print(f"Сумма элементов строки {n}: {sum_row}")
-print(f"Произведение элементов строки {n}: {proizvedenie}")
+matrix[1] = cols
+print(f"Матрица после замены 2й строки на сумму столбцов: {matrix}")
+for row in matrix:
+    print(row)
