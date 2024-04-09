@@ -1,0 +1,48 @@
+import sqlite3 as sq
+from data_users import info_users
+
+with sq.connect('expense_items.db') as con:
+    cur = con.cursor()
+    # cur.execute("DROP TABLE IF EXISTS expences")
+    cur.execute("""CREATE TABLE IF NOT EXISTS expences (
+    order_number INTEGER PRIMARY KEY,
+    last_name TEXT,
+    place_trip TEXT,
+    payment REAL,
+    advance REAL,
+    expence_type TEXT,
+    expence_amount REAL
+    )""")
+
+    # with sq.connect('expense_items.db') as con:
+    #     cur = con.cursor()
+    #     cur.executemany("INSERT INTO expences VALUES (?, ?, ?, ?, ?, ?, ?)", info_users)
+    #     cur.execute("SELECT * FROM expences")
+    #     result = cur.fetchall()
+    #     print(result)
+
+    # Поиск данных sql-запрос 1
+    # with sq.connect('expense_items.db') as con:
+    #     cur = con.cursor()
+    #     cur.execute('SELECT * FROM expences WHERE order_number = 5')
+    #     result = cur.fetchall()
+    #     print(result)
+
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute('UPDATE expences SET payment = payment+1000 WHERE order_number = 2')
+        result = cur.fetchall()
+        print(result)
+
+# info_users = [
+    (1, 'Белов', 'Москва', 6004.0, 3000.0, 'Транспорт', 3500.0),
+    (2, 'Иванов', 'Архангельск', 5400.0, 2800.0, 'Транспорт', 3200.0),
+    (3, 'Артемов', 'Ростов-на-Дону', 7600.0, 4300.0, 'Питание', 3700.0),
+    (4, 'Пушкин', 'Владивосток', 8920.0, 5600.0, 'Жилье', 5600.0),
+    (5, 'Достоевский', 'Мурманск', 21440.0, 16530.0, 'Питание', 4400.0),
+    (6, 'Гризман', 'Орел', 21900.0, 17200.0, 'Транспорт', 6800.0),
+    (7, 'Месси', 'Ижевск', 34020.0, 21453.0, 'Питание', 12000.0),
+    (8, 'Роналдо', 'Пермь', 84880.0, 64220.0, 'Транспорт', 34020.0),
+    (9, 'Кокорин', 'Санкт-Петербург', 50020.0, 27490.0, 'Транспорт', 30420.0),
+    (10, 'Федоров', 'Ростов', 50241.0, 2750.0, 'Жилье', 3540.0),
+]
