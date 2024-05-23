@@ -25,71 +25,72 @@ with sq.connect('expense_items.db') as con:
 
 
     # Поиск данных sql-запрос 1
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute('SELECT * FROM expences WHERE place_trip == "Ростов-на-Дону"')
-    #     result_1 = cur.fetchall()
-    #     print(result_1)
-    #
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute('SELECT * FROM expences WHERE last_name LIKE  "Б%"')
-    #     result_2 = cur.fetchall()
-    #     print(result_2)
-    #
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute('SELECT * FROM expences WHERE expence_type = "Питание"')
-    #     result_3 = cur.fetchall()
-    #     print(result_3)
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute('SELECT * FROM expences WHERE place_trip == "Ростов-на-Дону"')
+        result_1 = cur.fetchall()
+        print(result_1)
+
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute('SELECT * FROM expences WHERE last_name LIKE  "Б%"')
+        result_2 = cur.fetchall()
+        print(result_2)
+
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute('SELECT * FROM expences WHERE expence_type = "Питание"')
+        result_3 = cur.fetchall()
+        print(result_3)
 
     # sql - 2
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute("UPDATE expences SET expence_type='Еда' WHERE expence_type=='Питание'")
-    #     cur.execute("SELECT * FROM expences")
-    #     result_4 = cur.fetchall()
-    #     print(result_4)
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute("UPDATE expences SET expence_type='Еда' WHERE expence_type=='Питание'")
+        cur.execute("SELECT * FROM expences")
+        result_4 = cur.fetchall()
+        print(result_4)
 
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute("UPDATE expences SET place_trip='Ростов-на-Дону' WHERE place_trip!='Ростов-на-Дону'")
-    #     cur.execute("SELECT * FROM expences")
-    #     result_5 = cur.fetchall()
-    #     print(result_5)
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute("UPDATE expences SET place_trip='Ростов-на-Дону' WHERE place_trip!='Ростов-на-Дону'")
+        cur.execute("SELECT * FROM expences")
+        result_5 = cur.fetchall()
+        print(result_5)
 
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute("UPDATE expences SET payment = payment+5000 WHERE order_number = 2")
-    #     cur.execute("SELECT * FROM expences WHERE order_number = 2")
-    #     result_6 = cur.fetchall()
-    #     print(result_6)
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute("UPDATE expences SET payment = payment+5000 WHERE order_number = 2")
+        cur.execute("SELECT * FROM expences WHERE order_number = 2")
+        result_6 = cur.fetchall()
+        print(result_6)
 
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute("DELETE FROM expences WHERE order_number == 1")
-    #     cur.execute("SELECT * FROM expences")
-    #     result_7 = cur.fetchall()
-    #     print(result_7)
+    # sql - 3
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute("DELETE FROM expences WHERE order_number == 1")
+        cur.execute("SELECT * FROM expences")
+        result_7 = cur.fetchall()
+        print(result_7)
 
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute("DELETE FROM expences WHERE order_number == 1")
-    #     cur.execute("SELECT * FROM expences")
-    #     result_7 = cur.fetchall()
-    #     print(result_7)
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute("DELETE FROM expences WHERE order_number == 1")
+        cur.execute("SELECT * FROM expences")
+        result_7 = cur.fetchall()
+        print(result_7)
 
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute("DELETE FROM expences WHERE last_name LIKE 'Б%'")
-    #     cur.execute("SELECT * FROM expences")
-    #     result_8 = cur.fetchall()
-    #     print(result_8)
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute("DELETE FROM expences WHERE last_name LIKE 'Б%'")
+        cur.execute("SELECT * FROM expences")
+        result_8 = cur.fetchall()
+        print(result_8)
 
-    # with sq.connect('expense_items.db') as con:
-    #     cur = con.cursor()
-    #     cur.execute("DELETE FROM expences WHERE expence_type = 'Транспорт'")
-    #     cur.execute("SELECT * FROM expences")
-    #     result_9 = cur.fetchall()
-    #     print(result_9)
+    with sq.connect('expense_items.db') as con:
+        cur = con.cursor()
+        cur.execute("DELETE FROM expences WHERE expence_type = 'Транспорт'")
+        cur.execute("SELECT * FROM expences")
+        result_9 = cur.fetchall()
+        print(result_9)
 
