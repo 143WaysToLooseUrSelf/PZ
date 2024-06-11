@@ -2,9 +2,19 @@
 
 import random
 
-N = int(input('Введите размер матрицы: '))
-matrix = [[random.randint(0, 20) for i in range(N)] for i in range(N)]
+N = int(input("Введите размер матрицы: "))
+matrix = [[random.randint(-10, 10) for i in range(N)] for j in range(N)]
 
-print(f'Исходная матрица: {matrix}')
-print('Минимальный элемент: ', min(min(matrix)))
-print('Максимальный элемент: ', max(max(matrix)))
+minimal = matrix[0][0]
+maxa = 0
+
+for i in range(N):
+    for j in range(N):
+        if matrix[i][j] < minimal:
+            minimal = matrix[i][j]
+        elif matrix[i][j] > maxa:
+            maxa = matrix[i][j]
+
+print('Исходная матрица:', matrix)
+print('Максимальный элемент: ', maxa)
+print('Минимальный элемент: ', minimal)
