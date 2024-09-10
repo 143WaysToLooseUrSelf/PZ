@@ -1,0 +1,219 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int day;
+  cout << "Введите день недели (от 1 до 7): ";
+  cin >> day;
+
+  switch (day) {
+    case 1:
+      cout << "Понедельник" << endl;
+      break;
+    case 2:
+      cout << "Вторник" << endl;
+      break;
+    case 3:
+      cout << "Среда" << endl;
+      break;
+    case 4:
+      cout << "Четверг" << endl;
+      break;
+    case 5:
+      cout << "Пятница" << endl;
+      break;
+    case 6:
+      cout << "Суббота" << endl;
+      break;
+    case 7:
+      cout << "Воскресенье" << endl;
+      break;
+    default:
+      cout << "Неверный номер дня недели." << endl;
+  }
+
+  return 0;
+}
+```
+
+### 2. Возведение в степень с помощью while
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int base = 2;
+  int power = 10;
+  int result = 1;
+
+  while (power > 0) {
+    result *= base;
+    power--;
+  }
+
+  cout << "2 в степени 10: " << result << endl;
+  return 0;
+}
+```
+
+### 3. Факториал числа
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int n, factorial = 1;
+
+  cout << "Введите целое число: ";
+  cin >> n;
+
+  int i = 1;
+  while (i <= n) {
+    factorial *= i;
+    i++;
+  }
+
+  cout << "Факториал " << n << ": " << factorial << endl;
+  return 0;
+}
+```
+
+### 4. Четные числа
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int n;
+
+  cout << "Введите целое число: ";
+  cin >> n;
+
+  int i = 0;
+  while (i <= n) {
+    if (i % 2 == 0) {
+      cout << i << " ";
+    }
+    i++;
+  }
+  cout << endl;
+  return 0;
+}
+```
+
+### 5. Сумма чисел до 1000
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int sum = 0;
+  int i = 1;
+
+  while (sum <= 1000) {
+    sum += i;
+    i++;
+  }
+
+  cout << "Сумма: " << sum << endl;
+  return 0;
+}
+```
+
+### 6. Проверка на простое число
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int n;
+
+  cout << "Введите целое число: ";
+  cin >> n;
+
+  if (n <= 1) {
+    cout << n << " не является простым числом." << endl;
+    return 0;
+  }
+
+  for (int i = 2; i * i <= n; i++) {
+    if (n % i == 0) {
+      cout << n << " не является простым числом." << endl;
+      return 0;
+    }
+  }
+
+  cout << n << " является простым числом." << endl;
+  return 0;
+}
+```
+
+### 7. Интерактивный консольный калькулятор
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int factorial(int n) {
+  if (n == 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+int main() {
+  int a, b;
+  char operation;
+
+  cout << "Введите первое число: ";
+  cin >> a;
+  cout << "Введите второе число: ";
+  cin >> b;
+  cout << "Введите операцию (+ - * / ! ^): ";
+  cin >> operation;
+
+  switch (operation) {
+    case '+':
+      cout << a << " + " << b << " = " << a + b << endl;
+      break;
+    case '-':
+      cout << a << " - " << b << " = " << a - b << endl;
+      break;
+    case '*':
+      cout << a << " * " << b << " = " << a * b << endl;
+      break;
+    case '/':
+      if (b != 0) {
+        cout << a << " / " << b << " = " << a / b << endl;
+      } else {
+        cout << "Деление на ноль невозможно." << endl;
+      }
+      break;
+    case '!':
+      if (a >= 0) {
+        cout << a << "! = " << factorial(a) << endl;
+      } else {
+        cout << "Факториал определен только для неотрицательных чисел." << endl;
+      }
+      break;
+    case '^':
+      cout << a << " ^ " << b << " = " << pow(a, b) << endl;
+      break;
+    default:
+      cout << "Неверная операция." << endl;
+  }
+  return 0;
+}
