@@ -1,0 +1,179 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int number = 42;
+  cout << "Значение переменной number: " << number << endl;
+  return 0;
+}
+```
+
+### 2. Переменные типа double
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  double a = 3.14;
+  double b = 2.71;
+
+  cout << "Сложение: " << a + b << endl;
+  cout << "Вычитание: " << a - b << endl;
+  cout << "Умножение: " << a * b << endl;
+  cout << "Деление: " << a / b << endl;
+  return 0;
+}
+```
+
+### 3. Переменная типа char
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  char letter = 'A';
+  cout << "Код символа 'A': " << (int)letter << endl;
+  return 0;
+}
+```
+
+### 4. Переменная типа bool
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  bool flag = true;
+  if (flag) {
+    cout << "Значение переменной flag: true" << endl;
+  } else {
+    cout << "Значение переменной flag: false" << endl;
+  }
+  return 0;
+}
+```
+
+### 5. Проверка числа
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int number;
+  cout << "Введите число: ";
+  cin >> number;
+
+  if (number % 2 == 0 && number > 0) {
+    cout << "1" << endl;
+  } else {
+    cout << "0" << endl;
+  }
+  return 0;
+}
+```
+
+### 6. Перевод Цельсия в Фаренгейт
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  double celsius, fahrenheit;
+
+  cout << "Введите температуру по Цельсию: ";
+  cin >> celsius;
+
+  fahrenheit = (celsius * 9) / 5 + 32;
+  cout << "Температура по Фаренгейту: " << fahrenheit << endl;
+  return 0;
+}
+```
+
+### 7. Алгоритм с переменной a
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int a = 10;
+
+  a++; // инкремент
+  a -= 3; // присваивание-вычитание
+  a %= 2; // присваивание-остаток от деления
+
+  cout << "Результат: " << a << endl;
+  return 0;
+}
+```
+
+### 8. Длина окружности
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+#define PI 3.14159 
+
+int main() {
+  double radius, circumference;
+
+  cout << "Введите радиус окружности: ";
+  cin >> radius;
+
+  circumference = 2 * PI * radius;
+  cout << "Длина окружности: " << circumference << endl;
+  return 0;
+}
+```
+
+### 9. Макрос для куба числа
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+#define cubeof(X) ((X)*(X)*(X))
+
+int main() {
+  int result = cubeof(10);
+  cout << "Куб числа 10: " << result << endl;
+  return 0;
+}
+```
+
+### 10. Простейший калькулятор
+
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main() {
+  int a, b;
+
+  cout << "Введите первое число: ";
+  cin >> a;
+  cout << "Введите второе число: ";
+  cin >> b;
+
+  cout << "Сложение: " << a + b << endl;
+  cout << "Вычитание: " << a - b << endl;
+  cout << "Умножение: " << a * b << endl;
+  cout << "Деление: " << a / b << endl;
+  return 0;
+}
